@@ -1,32 +1,24 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "momo/server.js",
-        "use": "@vercel/node"
-      },
-      {
-        "src": "zalopay/server.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/momo/payment",
-        "dest": "momo/server.js"
-      },
-      {
-        "src": "/momo/callback",
-        "dest": "momo/server.js"
-      },
-      {
-        "src": "/zalopay/payment",
-        "dest": "zalopay/server.js"
-      },
-      {
-        "src": "/zalopay/callback",
-        "dest": "zalopay/server.js"
-      }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [
+    {
+      "src": "momo/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "zalopay/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/momo/(.*)",
+      "dest": "momo/server.js"
+    },
+    {
+      "src": "/zalopay/(.*)",
+      "dest": "zalopay/server.js"
+    }
+  ],
+  "outputDirectory": "."
+}
