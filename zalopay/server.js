@@ -17,7 +17,7 @@ const config = {
   endpoint: "https://sb-openapi.zalopay.vn/v2/create",
 };
 
-app.post("/payment", async (req, res) => {
+app.post("/zalopay/payment", async (req, res) => {
   const { amount, orderInfo } = req.body;
 
   const embed_data = {
@@ -69,7 +69,7 @@ app.post("/payment", async (req, res) => {
   }
 });
 
-app.post("/callback", async (req, res) => {
+app.post("/zalopay/callback", async (req, res) => {
   const { insertMultipleOrders, insertOrder, insertUser } = await import(
     "../actions.js"
   );

@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 var accessKey = "F8BBA842ECF85";
 var secretKey = "K951B6PE1waDMi640xX08PD3vg6EkVlz";
 
-app.post("/payment", async (req, res) => {
+app.post("/momo/payment", async (req, res) => {
   const { amount, orderInfo: orderInfoData } = req.body;
 
   var orderInfo = "pay with MoMo";
@@ -107,7 +107,7 @@ app.post("/payment", async (req, res) => {
   }
 });
 
-app.post("/callback", async (req, res) => {
+app.post("/momo/callback", async (req, res) => {
   const { insertMultipleOrders, insertOrder, insertUser } = await import(
     "../actions.js"
   );
@@ -177,7 +177,7 @@ app.post("/callback", async (req, res) => {
   return res.status(200).json(req.body);
 });
 
-app.post("/transaction-status", async (req, res) => {
+app.post("/momo/transaction-status", async (req, res) => {
   const { orderId } = req.body;
 
   const rawSignature = `accessKey=${accessKey}&orderId=${orderId}&partnerCode=MOMO&requestId=${orderId}`;
