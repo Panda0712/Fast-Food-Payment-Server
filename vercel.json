@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "momo/server.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "zalopay/server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/momo/(.*)",
+        "dest": "momo/server.js"
+      },
+      {
+        "src": "/zalopay/(.*)",
+        "dest": "zalopay/server.js"
+      }
+    ],
+    "rewrites" : [{"source" : "/(.*)","destination" : "/"}]
+  }
+  
