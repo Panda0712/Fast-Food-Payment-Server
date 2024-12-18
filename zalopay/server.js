@@ -71,7 +71,7 @@ app.post("/payment", async (req, res) => {
 
 app.post("/callback", async (req, res) => {
   const { insertMultipleOrders, insertOrder, insertUser } = await import(
-    "../../app/_lib/actions.js"
+    "../actions.js"
   );
 
   let result = {};
