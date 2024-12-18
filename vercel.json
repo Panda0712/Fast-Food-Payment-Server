@@ -12,14 +12,21 @@
     ],
     "routes": [
       {
-        "src": "/momo/(.*)",
+        "src": "/momo/payment",
         "dest": "momo/server.js"
       },
       {
-        "src": "/zalopay/(.*)",
+        "src": "/momo/callback",
+        "dest": "momo/server.js"
+      },
+      {
+        "src": "/zalopay/payment",
+        "dest": "zalopay/server.js"
+      },
+      {
+        "src": "/zalopay/callback",
         "dest": "zalopay/server.js"
       }
-    ],
-    "rewrites" : [{"source" : "/(.*)","destination" : "/"}]
+    ]
   }
   

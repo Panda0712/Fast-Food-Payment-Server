@@ -220,11 +220,13 @@ app.post("/transaction-status", async (req, res) => {
   }
 });
 
-app.listen(6000, (error) => {
-  if (error) {
-    console.log(error);
-    return;
-  }
+// app.listen(6000, (error) => {
+//   if (error) {
+//     console.log(error);
+//     return;
+//   }
 
-  console.log("Server is running at port 6000");
-});
+//   console.log("Server is running at port 6000");
+// });
+
+module.exports = app;

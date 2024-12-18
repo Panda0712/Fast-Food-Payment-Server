@@ -143,10 +143,12 @@ app.post("/callback", async (req, res) => {
   res.json(result);
 });
 
-app.listen(5000, (err) => {
-  if (err) {
-    throw new Error("Error to connect to the server");
-  }
+// app.listen(5000, (err) => {
+//   if (err) {
+//     throw new Error("Error to connect to the server");
+//   }
 
-  console.log("server run at port 5000");
-});
+//   console.log("server run at port 5000");
+// });
+
+module.exports = app;
